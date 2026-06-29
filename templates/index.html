@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua App To-Do</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
+        form { display: flex; margin-bottom: 20px; }
+        input[type="text"] { flex: 1; padding: 10px; font-size: 16px; }
+        button { padding: 10px; font-size: 16px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 10px; background: #f4f4f4; margin-bottom: 5px; border-left: 5px solid #007bff; }
+    </style>
+</head>
+<body>
+
+    <h1>Lista de Tarefas UFC</h1>
+
+    <form action="/add" method="POST">
+        <input type="text" name="title" placeholder="Nova tarefa..." required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo[1] }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
