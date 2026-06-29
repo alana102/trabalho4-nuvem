@@ -40,7 +40,6 @@ def index():
     conn.close()
     return render_template('index.html', todos=todos)
 
-@app.route('/add', codecs=['POST'])
 @app.route('/add', methods=['POST'])
 def add_todo():
     title = request.form.get('title')
